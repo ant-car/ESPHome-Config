@@ -1,2 +1,2 @@
 # ESPHome
-ESPHome config yamls for my devices
+This is a place for me to store the YAML files created through ESPHome Dashboard.
