@@ -7,6 +7,5 @@
 **/lib/
 **/src/
 **/platformio.ini
-/secrets.yaml
-/wifi.yaml
-/**/
+common/secrets.yaml
+wifi.yaml

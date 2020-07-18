@@ -3,23 +3,7 @@ esphome:
   platform: ESP8266
   board: esp01_1m
 
-wifi: !include wifi.yaml
-
-web_server: !include web.yaml
-
-captive_portal:
-
-# Enable logging
-logger:
-  level: VERBOSE
-  baud_rate: 0
-
-# Enable Home Assistant API
-api:
-  password: !secret api_password
-
-ota:
-  password: !secret ota_password
+<<: !include common/common_config.yaml
 
 binary_sensor:
   - platform: gpio

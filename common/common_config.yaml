@@ -1,0 +1,21 @@
+wifi: !include wifi.yaml
+
+web_server: 
+  port: 80
+  auth:
+    username: !secret web_server_username
+    password: !secret web_server_password
+
+captive_portal:
+
+# Enable logging
+logger:
+  level: VERBOSE
+  baud_rate: 0
+
+# Enable Home Assistant API
+api:
+  password: !secret api_password
+
+ota:
+  password: !secret ota_password

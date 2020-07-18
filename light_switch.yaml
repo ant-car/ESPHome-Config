@@ -5,23 +5,7 @@ esphome:
   includes:
     - sb1_uart.h
 
-wifi: !include wifi.yaml
-
-web_server: !include web.yaml
-
-captive_portal:
-
-# Enable logging
-logger:
-  level: VERBOSE
-  baud_rate: 0
-
-# Enable Home Assistant API
-api:
-  password: !secret api_password
-
-ota:
-  password: !secret ota_password
+<<: !include common/common_config.yaml
 
 uart:
   tx_pin: GPIO1
