@@ -1,25 +1,25 @@
 esphome:
-  name: testpower
+  name: power_point
   platform: ESP8266
   board: esp01_1m
 
-wifi:
-  ssid: "ESPHome"
-  password: "ESPHome"
-  fast_connect: true
+wifi: !include wifi.yaml
+
+web_server: !include web.yaml
+
+captive_portal:
 
 # Enable logging
 logger:
+  level: VERBOSE
+  baud_rate: 0
 
 # Enable Home Assistant API
 api:
-  password: "ESPHome"
+  password: !secret api_password
 
 ota:
-  password: "ESPHome"
-
-web_server:
-  port: 80
+  password: !secret ota_password
 
 binary_sensor:
   - platform: gpio
@@ -61,7 +61,7 @@ switch:
 - platform: gpio
   name: "Left Relay"
   pin: GPIO13
-  restore_mode: ALWAYS_OFF
+  restore_mode: RESTORE_DEFAULT_OFF
   id: Left_Relay
   on_turn_on:
     - light.turn_on: Left_LED_Switch
@@ -70,7 +70,7 @@ switch:
 - platform: gpio
   name: "Right Relay"
   pin: GPIO15
-  restore_mode: ALWAYS_OFF
+  restore_mode: RESTORE_DEFAULT_OFF
   id: Right_Relay
   on_turn_on:
     - light.turn_on: Right_LED_Switch
@@ -82,24 +82,24 @@ switch:
   inverted: False
   restore_mode: ALWAYS_ON
 
-sensor:
-  - platform: hlw8012
-    sel_pin:
-      number: GPIO5
-      inverted: True
-    cf_pin: GPIO04
-    cf1_pin: GPIO05
-    voltage_divider: 900000
-    current_resistor: 1.1
-    current:
-      name: "Amperage"
-      unit_of_measurement: A
-    voltage:
-      name: "Voltage"
-      unit_of_measurement: V
-    power:
-      name: "Wattage"
-      unit_of_measurement: W
-      id: "Wattage"
-    change_mode_every: 8
-    update_interval: 10s
+#sensor:
+#  - platform: hlw8012
+#    sel_pin:
+#      number: GPIO5
+#      inverted: True
+#    cf_pin: GPIO04
+#    cf1_pin: GPIO05
+#    voltage_divider: 970000
+#    current_resistor: 1.1
+#    current:
+#      name: "Amperage"
+#      unit_of_measurement: A
+#    voltage:
+#      name: "Voltage"
+#      unit_of_measurement: V
+#    power:
+#      name: "Wattage"
+#      unit_of_measurement: W
+#      id: "Wattage"
+#    change_mode_every: 8
+#    update_interval: 10s

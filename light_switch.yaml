@@ -1,0 +1,40 @@
+esphome:
+  name: light_switch
+  platform: ESP8266
+  board: esp01_1m
+  includes:
+    - sb1_uart.h
+
+wifi: !include wifi.yaml
+
+web_server: !include web.yaml
+
+captive_portal:
+
+# Enable logging
+logger:
+  level: VERBOSE
+  baud_rate: 0
+
+# Enable Home Assistant API
+api:
+  password: !secret api_password
+
+ota:
+  password: !secret ota_password
+
+uart:
+  tx_pin: GPIO1
+  rx_pin: GPIO3
+  baud_rate: 9600
+  id: tuya_mcu
+
+binary_sensor:
+  platform: template
+  id: uart_sensor
+
+custom_component:
+- id: tuya_uart
+  lambda: |-
+    auto component = new SB1UARTComponent(id(tuya_mcu), id(uart_sensor));
+    return {component};
