@@ -13,12 +13,6 @@ output:
   inverted: True
   id: LED
 
-light:
-- platform: binary
-  name: "LED"
-  output: LED
-  id: LED_Switch
-
 switch:
 - platform: gpio
   name: "Relay"
@@ -26,6 +20,6 @@ switch:
   restore_mode: RESTORE_DEFAULT_OFF
   id: Relay
   on_turn_on:
-    - light.turn_on: LED_Switch
+    - output.turn_on: LED
   on_turn_off:
-    - light.turn_off: LED_Switch
+    - output.turn_off: LED

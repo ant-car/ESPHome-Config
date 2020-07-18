@@ -13,22 +13,22 @@ binary_sensor:
               lambda: 'return id(MasterSwitch).state == true;'
             then:
               - switch.turn_off: Relay_1
-              - delay: 200ms
+              - delay: 150ms
               - switch.turn_off: Relay_2
-              - delay: 200ms
+              - delay: 150ms
               - switch.turn_off: Relay_3
-              - delay: 200ms
+              - delay: 150ms
               - switch.turn_off: Relay_4
-              - delay: 200ms
+              - delay: 150ms
             else:
               - switch.turn_on: Relay_1
-              - delay: 200ms
+              - delay: 150ms
               - switch.turn_on: Relay_2
-              - delay: 200ms
+              - delay: 150ms
               - switch.turn_on: Relay_3
-              - delay: 200ms
+              - delay: 150ms
               - switch.turn_on: Relay_4
-              - delay: 200ms
+              - delay: 150ms
   - platform: template
     name: "Master Switch"
     id: MasterSwitch
@@ -39,21 +39,15 @@ binary_sensor:
         return false;
       }
     on_release:
-      - light.turn_off: LED_Switch
+      - output.turn_off: LED
     on_press:
-      - light.turn_on: LED_Switch
+      - output.turn_on: LED
 
 output:
 - platform: gpio
   pin: GPIO01
   inverted: True
   id: LED
-
-light:
-- platform: binary
-  name: "LED"
-  output: LED
-  id: LED_Switch
 
 switch:
 - platform: gpio
