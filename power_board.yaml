@@ -59,20 +59,20 @@ switch:
 - platform: gpio
   name: "Port 1"
   pin: GPIO05
-  restore_mode: RESTORE_DEFAULT_ON
+  restore_mode: RESTORE_DEFAULT_OFF
   id: Relay_1
 - platform: gpio
   name: "Port 2"
   pin: GPIO04
-  restore_mode: RESTORE_DEFAULT_ON
+  restore_mode: RESTORE_DEFAULT_OFF
   id: Relay_2
 - platform: gpio
   name: "Port 3"
   pin: GPIO13
-  restore_mode: RESTORE_DEFAULT_ON
+  restore_mode: RESTORE_DEFAULT_OFF
   id: Relay_3
 - platform: gpio
   name: "Port 4"
   pin: GPIO12
-  restore_mode: RESTORE_DEFAULT_ON
+  restore_mode: RESTORE_DEFAULT_OFF
   id: Relay_4
