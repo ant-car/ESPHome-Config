@@ -1,8 +1,5 @@
-esphome:
-  name: extension_cord
-  comment: https://www.bunnings.com.au/arlec-grid-connect-smart-10m-extension-lead_p0098824
-  platform: ESP8266
-  board: esp8285
+substitutions:
+  device_name: extension_cord
 
 <<: !include common/common_config.yaml
 

@@ -1,0 +1,58 @@
+esphome:
+  name: ${device_name}
+  platform: ESP8266
+  board: esp8285
+  comment: https://www.kogan.com/au/buy/kogan-smarterhome-smart-plug-energy-meter/
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: GPIO0
+      mode: INPUT_PULLUP
+      inverted: True
+    name: "Button"
+    on_press:
+      - switch.toggle: Relay
+
+output:
+- platform: gpio
+  pin: GPIO13
+  inverted: True
+  id: LED
+
+light:
+- platform: binary
+  name: "Status Indicator"
+  output: LED
+  id: Status_LED
+
+switch:
+- platform: gpio
+  name: "Relay"
+  pin: GPIO14
+  restore_mode: RESTORE_DEFAULT_OFF
+  id: Relay
+  # This has its own light linked to the relay
+
+sensor:
+  - platform: hlw8012
+    sel_pin: 
+      number: 12
+      inverted: true
+    cf_pin: GPIO4
+    cf1_pin: GPIO5
+    current:
+      name: ${current_name}
+      unit_of_measurement: A
+    voltage:
+      name: ${voltage_name}
+      unit_of_measurement: V
+    power:
+      name: ${power_name}
+      unit_of_measurement: W
+      id: "Wattage"
+    current_resistor: ${current_resistor}
+    voltage_divider: ${voltage_divider}
+    change_mode_every: 3
+    update_interval: 10s
+    

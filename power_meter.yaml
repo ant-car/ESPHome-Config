@@ -1,0 +1,11 @@
+substitutions:
+  device_name: power_meter
+  voltage_name: "Power Meter Voltage"
+  voltage_divider: '1976.9'
+  power_name: "Power Meter Usage"
+  current_name: "Power Meter Current"
+  current_resistor: '0.00087'
+
+<<: !include common/common_config.yaml
+
+<<: !include devices/kogan_smart_plug_with_energy_meter.yaml

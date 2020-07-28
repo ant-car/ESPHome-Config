@@ -1,0 +1,11 @@
+substitutions:
+  device_name: salt_lamp
+  voltage_name: "Salt Lamp Voltage"
+  voltage_divider: '1976.9'
+  power_name: "Salt Lamp Usage"
+  current_name: "Salt Lamp Current"
+  current_resistor: '0.00087'
+
+<<: !include common/common_config.yaml
+
+<<: !include devices/kogan_smart_plug_with_energy_meter.yaml
