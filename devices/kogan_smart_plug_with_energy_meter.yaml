@@ -14,17 +14,10 @@ binary_sensor:
     on_press:
       - switch.toggle: Relay
 
-output:
-- platform: gpio
-  pin: GPIO13
-  inverted: True
-  id: LED
-
-light:
-- platform: binary
-  name: "Status Indicator"
-  output: LED
-  id: Status_LED
+status_led:
+  pin: 
+    number: 13
+    inverted: true
 
 switch:
 - platform: gpio
