@@ -1,7 +1,10 @@
-esphome:
-  name: power_point
-  platform: ESP8266
-  board: esp01_1m
+substitutions:
+  device_name: power_point
+  voltage_name: "Power Point Voltage"
+  voltage_divider: '1888'
+  power_name: "Power Point Usage"
+  current_name: "Power Point Current"
+  current_resistor: '0.00087'
 
 <<: !include common/common_config.yaml
 
