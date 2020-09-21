@@ -1,24 +1,6 @@
-esphome:
-  name: light_switch
-  platform: ESP8266
-  board: esp01_1m
-  includes:
-    - sb1_uart.h
+substitutions:
+  device_name: light_switch
 
 <<: !include common/common_config.yaml
 
-uart:
-  tx_pin: GPIO1
-  rx_pin: GPIO3
-  baud_rate: 9600
-  id: tuya_mcu
-
-binary_sensor:
-  platform: template
-  id: uart_sensor
-
-custom_component:
-- id: tuya_uart
-  lambda: |-
-    auto component = new SB1UARTComponent(id(tuya_mcu), id(uart_sensor));
-    return {component};
+<<: !include devices/tuya_mcu_light_switch.yaml

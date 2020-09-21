@@ -1,10 +1,10 @@
 substitutions:
   device_name: salt_lamp
   voltage_name: "Salt Lamp Voltage"
-  voltage_divider: '1976.9'
+  voltage_divider: '2030'
   power_name: "Salt Lamp Usage"
   current_name: "Salt Lamp Current"
-  current_resistor: '0.00087'
+  current_resistor: '0.00227'
 
 <<: !include common/common_config.yaml
 

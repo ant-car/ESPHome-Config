@@ -1,5 +1,5 @@
 substitutions:
-  device_name: power_meter
+  device_name: iron
   voltage_name: "Power Meter Voltage"
   voltage_divider: '2030'
   power_name: "Power Meter Usage"
@@ -9,3 +9,15 @@ substitutions:
 <<: !include common/common_config.yaml
 
 <<: !include devices/kogan_smart_plug_with_energy_meter.yaml
+
+interval:
+  - interval: 1sec
+    then:
+      - if:
+          condition:
+            for:
+              time: 15min
+              condition:
+                switch.is_on: Relay
+          then:
+            - switch.turn_off: Relay
