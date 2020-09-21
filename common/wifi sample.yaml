@@ -1,6 +1,6 @@
 networks:
   - ssid: PrettyFlyForAWiFi
-    password: "Ahhhhhhhhhhhh"
+    password: !secret wifi_password
     hidden: true
   - ssid: IoT
     password: "2189hjfaq34!@"
@@ -8,4 +8,4 @@ networks:
 # Enable fallback hotspot (captive portal) in case wifi connection fails
 ap:
   ssid: "ESPHome Fallback Hotspot"
-  password: "Noooooooo"
+  password: !secret ap_password
