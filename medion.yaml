@@ -1,0 +1,6 @@
+substitutions:
+  device_name: medion_plug
+
+<<: !include common/common_config.yaml
+
+<<: !include devices/medion_smart_plug.yaml
