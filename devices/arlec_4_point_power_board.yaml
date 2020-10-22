@@ -1,5 +1,5 @@
 esphome:
-  name: ${device_name}
+  name: $device_name
   comment: https://www.bunnings.com.au/arlec-grid-connect-smart-4-outlet-powerboard-with-usb-charger_p0074829
   platform: ESP8266
   board: esp8285

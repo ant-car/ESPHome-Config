@@ -1,5 +1,5 @@
 esphome:
-  name: ${device_name}
+  name: $device_name
   comment: https://www.bunnings.com.au/arlec-grid-connect-smart-10m-extension-lead_p0098824
   platform: ESP8266
   board: esp8285
