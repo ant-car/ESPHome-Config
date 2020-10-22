@@ -1,0 +1,6 @@
+substitutions:
+  device_name: kitchen_tv
+
+<<: !include common/common_config.yaml
+
+<<: !include devices/arlec_extension_cord.yaml

@@ -9,3 +9,4 @@
 **/platformio.ini
 common/secrets.yaml
 wifi.yaml
+._ESPHome.code-workspace
