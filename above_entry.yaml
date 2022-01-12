@@ -1,6 +1,6 @@
 substitutions:
   device_name: above_entry
-  voltage_name: "Power Meter Voltage"
+  voltage_name: "Above Entry Voltage"
   voltage_divider: '2030'
   power_name: "Above Entry Usage"
   current_name: "Above Entry Current"

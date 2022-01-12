@@ -5,6 +5,7 @@ networks:
   - ssid: IoT
     password: "2189hjfaq34!@"
     hidden: false
+    
 # Enable fallback hotspot (captive portal) in case wifi connection fails
 ap:
   ssid: "ESPHome Fallback Hotspot"
