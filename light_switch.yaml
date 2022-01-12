@@ -1,5 +1,5 @@
 substitutions:
-  device_name: light_switch
+  device_name: study_bookshelf_light_switch
 
 <<: !include common/common_config.yaml
 

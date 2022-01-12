@@ -10,3 +10,4 @@
 common/secrets.yaml
 wifi.yaml
 ._ESPHome.code-workspace
+.DS_Store

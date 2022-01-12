@@ -1,0 +1,7 @@
+substitutions:
+  device_name: testreader
+  friendly_name: testReader
+
+<<: !include devices/tag_reader.yaml
+
+<<: !include common/common_config.yaml

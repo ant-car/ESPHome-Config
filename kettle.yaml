@@ -1,0 +1,6 @@
+substitutions:
+  device_name: kettle
+
+<<: !include common/common_config.yaml
+
+<<: !include devices/tuya_smart_kettle.yaml
