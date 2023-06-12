@@ -1,0 +1,33 @@
+esphome:
+  name: $device_name
+  platform: ESP8266
+  board: esp12e
+
+uart:
+  tx_pin: GPIO1
+  rx_pin: GPIO3
+  baud_rate: 9600
+  id: tuya_mcu
+
+tuya:
+
+fan:
+  - platform: tuya
+    name: Fan
+    switch_datapoint: 1
+    speed_datapoint: 3
+    direction_datapoint: 8
+    speed_count: 6
+
+light:
+  - platform: "tuya"
+    name: "Light"
+    dimmer_datapoint: 16
+    switch_datapoint: 15
+    color_temperature_datapoint: 19
+    min_value: 1
+    max_value: 5
+    color_temperature_max_value: 2
+    color_temperature_invert: false
+    cold_white_color_temperature: 2000 K
+    warm_white_color_temperature: 4000 K
