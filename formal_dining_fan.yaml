@@ -1,0 +1,6 @@
+substitutions:
+  device_name: formal_dining_fan
+
+<<: !include common/common_config.yaml
+
+<<: !include devices/skyfan_dc.yaml
